@@ -1,0 +1,124 @@
+/**
+ * Default CSS File
+ * @author Hafrans
+ * @version 1.0
+ */
+body{
+	position: static;
+	min-width: 280px;
+	font-family: "微软雅黑","arial black";
+	overflow-x:hidden;
+	margin:0 auto;
+	font-size:1rem;
+	background-color: lightgray;
+}
+.file-name{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.container{
+	max-width: 80%;
+	margin:1% auto;
+	padding:0.6rem;
+	background-color: lightgray;
+}
+/*Header*/
+nav{
+	position:relative;
+	background-color:rgb(0,120,215);
+	height:6rem;
+	top:0;
+	width:100%;
+	z-index: 1;
+	padding: 0;
+	color:#EFEFEF;
+}
+nav h1{
+	font-size: 3rem;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: 0;
+	
+}
+nav div{
+	float:right;
+	margin-top: 6px;
+	margin-right:1%;
+	padding:0px;
+}
+nav div p{
+	margin:5px 0px;
+}
+/*Footer*/
+footer{
+	position:relative;
+	background-color:rgb(242,242,242);
+	height:4rem;
+	bottom:0;
+	width:100%;
+	z-index: 1;
+}
+footer p{
+	margin: 0;
+	font-size: small;
+}
+footer .brand{
+	position: absolute;
+	margin: 0% 0px;
+	top:8%;
+	font-weight: bolder;
+	font-size: 2.5rem;
+	color:#ccc;
+}
+footer .cprt{
+	margin: 0;
+	font-size: small;
+	position: absolute;
+	bottom:2px;
+	right:2px;
+	color:#999;
+}
+footer .cprt-md{
+	display:block;
+}
+footer .cprt-sm{
+	display: none;
+}
+table{
+	width:100%;
+	border:0px;
+}
+table tr th{
+	border-radius: 20px;
+	border-style: groove inset;
+}
+@media only screen and (max-width:640px) {
+	.container{
+		max-width: 100%;
+	}
+	nav div{
+		margin-top: 2.5%;
+		font-size: 1rem;
+	}
+	nav h1{
+		font-size: 3rem;
+	}
+	footer .cprt{
+		font-size: smaller;
+		display: none;
+	}
+	footer p{
+		font-size: smaller;
+	}
+	table{
+		font-size:0.75rem;
+	}
+	footer .cprt-sm{
+		display: block;
+	}
+	footer .cprt-md{
+		display: none;
+	}
+}
+

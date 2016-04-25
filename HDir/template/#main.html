@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title><?=$config['title']?></title>
+		<link rel="stylesheet" href="./HDir/css/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=0.8 ,user-scalable=no" />
+	</head>
+	<!--
+    	Author		：hafrans@163.com
+    	Date  		：2016-04-22
+    	Description ：Main Page
+    -->
+	<body>
+		<nav>
+			<div>
+				<p>
+					Server IP : <?=$_SERVER['SERVER_ADDR']?>
+				</p>
+				<p>
+					Client IP : <?=$_SERVER['REMOTE_ADDR']?>
+				</p>
+				<p>
+					Local Time: <span id="hour">00</span>:<span>00</span>:<span>00</span>
+				</p>
+			</div>
+			<h1>
+				HDir
+			</h1>
+		</nav>
+		<!--  !// Header     -->
+		<div class="container">
+			<table border="1">
+				<tr>
+					<th style="width:5%;border: none;"></th>
+					<th style="width:50%;background-color: lightcoral;">
+						文件名
+					</th>
+					<th style="width:15%;background-color: lightgreen;">
+						文件类型
+					</th>
+					<th style="width:15%;background-color:lightseagreen;">
+						创建日期
+					</th>
+					<th style="width:15%;background-color: lightskyblue;">
+						文件大小
+					</th>
+				</tr>
+			</table>
+		</div>
+		<footer>
+			<p class="brand">
+				HDir 
+			</p>
+			<p class="cprt cprt-md">Copy Right(c) 2009 - 2016 Hafrans Inc. All Rights Reserved.(测试)</p>
+			<p class="cprt cprt-sm">(c)2016 Hafrans</p>
+		</footer>
+		<script type="text/javascript" src="./HDir/js/main.js" ></script>
+	</body>
+</html>
