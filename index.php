@@ -9,13 +9,18 @@
 	  * 主配置文件
 	  */
 	  $config = [
-	  			"title" => "Hafrans Directory Mirror"
+	  			"title" => "Hafrans Directory Mirror",
+	  			"SystemCharset" => 'gbk//ignore'
 	  ];
+	 require "./Hdir/tool.functions.php";
 	 require "./HDir/HDir.class.php";
-	 $dir = new HDir();
+	 $string = substr($_SERVER['REQUEST_URI'],strpos($_SERVER['REQUEST_URI'],"?")?strpos($_SERVER['REQUEST_URI'],"?")+1:-1);
+	 $string = (($string = $string == "/"?false:$string) == false || $string == 'pp' ||  $string == 'p' )?null:$string ;// php test
+	 $string = $string == null?null:iconv("utf-8",$config['SystemCharset'], urldecode($string));
+	 $dir = new HDir($string);
+	 $cdir= $dir->getCurrentDir();
 	 $lib = $dir->showLists();
 	 //load templates
 	 include "./HDir/template/#main.html";
 	 //$dir->debug();
-	 
 	

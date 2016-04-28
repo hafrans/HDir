@@ -1,3 +1,79 @@
-<table>
-	
-</table>
+<?php
+		$string = $string?iconv($config['SystemCharset'],"utf-8",$string):null;
+		foreach($lib['dir'] as $arr)
+		{
+			$url = "";
+			$arr['name'] = iconv($config['SystemCharset'],"utf-8",$arr['name']);
+			if($arr['name'] == "." )
+				continue;
+			if($arr['name'] == "..")
+				$url  = dirname($string);
+			else
+			{
+				$append = $string?"/":false;
+				$url .= $string.$append.$arr['name'];
+			}
+			
+			if($url == ".")
+				$url = "";
+			$size = getSize($arr['details']['stat']['size']);
+			$time = date("Y-m-d H:i",$arr['details']['stat']['ctime']);
+			echo <<<HTML
+				<tr>
+					<td style="width:5%;border:none;">
+						&nbsp;
+					</td>
+					<td style="width:50%;background-color: lightcoral;">
+						<a href="?{$url}">{$arr['name']}</a>
+					</td>
+					<td style="width:15%;background-color: lightgreen;">
+						Folder
+					</td>
+					<td style="width:15%;background-color:lightseagreen;">
+						{$time}
+					</th>
+					<td style="width:15%;background-color: lightskyblue;">
+						{$size}
+					</td>
+				</tr>
+HTML;
+		}
+		foreach($lib['file'] as $arr)
+		{
+			$arr['name'] = iconv($config['SystemCharset'],"utf-8",$arr['name']);
+			if($string == false)
+			{
+				$url  =  $arr['name'];
+			}else
+			{
+				$url  =  $string."/".$arr['name'];
+			}
+			$size = getSize($arr['details']['stat']['size']);
+			$time = date("Y-m-d H:i",$arr['details']['stat']['ctime']);
+			$type = strtolower(substr($arr['name'],strpos($arr['name'],".")?strpos($arr['name'],".")+1:0)."文件");
+			$arr['name'] = iconv($config['SystemCharset'],"utf-8",$arr['name']);
+			echo <<<HTML
+				<tr>
+					
+					<td style="width:5%;border:none;">
+						&nbsp;
+					</td>
+					
+					<td style="width:50%;background-color: lightcoral;">
+						<a href="{$url}">{$arr['name']}</a>
+					</td>
+					
+					<td style="width:15%;background-color: lightgreen;">
+						{$type}
+					</td>
+					<td style="width:15%;background-color:lightseagreen;">
+						{$time}
+					</th>
+					<td style="width:15%;background-color: lightskyblue;">
+						{$size}
+					</td>
+					
+				</tr>
+HTML;
+		}
+?>

@@ -51,6 +51,10 @@ nav div p{
 	margin:5px 0px;
 }
 /*Footer*/
+a{
+	text-decoration: none;
+	color:black;
+}
 footer{
 	position:relative;
 	background-color:rgb(242,242,242);
@@ -89,7 +93,10 @@ table{
 	width:100%;
 	border:0px;
 }
-table tr th{
+table tr th,td{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding-left:0.5rem;
 	border-radius: 20px;
 	border-style: groove inset;
 }

@@ -259,8 +259,11 @@ class HDir{
 				rewinddir($this->dir_handle);
 				while(($file = readdir($this->dir_handle)) !== FALSE)
 				{
+					if(strpos($_SERVER['PHP_SELF'],$file))
+						continue;
 					if(is_file($this->currentDir.DIRECTORY_SEPARATOR.$file))
 					{
+						
 						$list[] = [
 							"name"   => $file,
 							"details"=> $this->getFileInfo($file)
