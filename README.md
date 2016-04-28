@@ -12,5 +12,12 @@ a good substitute.If you know some simple HTML / CSS, then you can create your o
 
 ---
 ##Version
+
+###v0.8.6
+1.[修复] 文件扩展名显示问题    
+2.[修复] 文件名显示乱码问题   
+3.[新增] 文件类型图标   
+4.[优化] 过长文件名称的显示优化
+
 ###V0.8.5  
   基础功能实现

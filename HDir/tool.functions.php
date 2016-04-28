@@ -21,3 +21,12 @@ function getSize($bytes = 0)
 	
 	
 }
+function getMType($string = null)
+{
+	//echo "./HDir/img/".$string.".gif";
+	if(file_exists("./HDir/img/filetype/".$string.".gif"))
+	{
+		return $string;
+	}
+	return "unknown";
+}

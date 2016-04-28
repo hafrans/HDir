@@ -8,6 +8,7 @@
 	 /**
 	  * 主配置文件
 	  */
+	  error_reporting(E_ERROR | E_WARNING);
 	  $config = [
 	  			"title" => "Hafrans Directory Mirror",
 	  			"SystemCharset" => 'gbk//ignore'

@@ -90,11 +90,13 @@ footer .cprt-sm{
 	display: none;
 }
 table{
-	width:100%;
+	width:95%;
 	border:0px;
 }
 table tr th,td{
 	white-space: nowrap;
+	overflow: hidden;
+	max-width: 120px;
 	text-overflow: ellipsis;
 	padding-left:0.5rem;
 	border-radius: 20px;

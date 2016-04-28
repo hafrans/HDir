@@ -3,15 +3,20 @@
 		foreach($lib['dir'] as $arr)
 		{
 			$url = "";
+			$img = "";
 			$arr['name'] = iconv($config['SystemCharset'],"utf-8",$arr['name']);
 			if($arr['name'] == "." )
 				continue;
 			if($arr['name'] == "..")
+			{
 				$url  = dirname($string);
+				$img  = "HDir/img/filetype/05.gif";
+			}
 			else
 			{
 				$append = $string?"/":false;
 				$url .= $string.$append.$arr['name'];
+				$img  = "HDir/img/filetype/02.gif";
 			}
 			
 			if($url == ".")
@@ -20,8 +25,8 @@
 			$time = date("Y-m-d H:i",$arr['details']['stat']['ctime']);
 			echo <<<HTML
 				<tr>
-					<td style="width:5%;border:none;">
-						&nbsp;
+					<td style="width:5%;text-align:right;border:none;">
+						<img src="{$img}" />
 					</td>
 					<td style="width:50%;background-color: lightcoral;">
 						<a href="?{$url}">{$arr['name']}</a>
@@ -40,6 +45,7 @@ HTML;
 		}
 		foreach($lib['file'] as $arr)
 		{
+			
 			$arr['name'] = iconv($config['SystemCharset'],"utf-8",$arr['name']);
 			if($string == false)
 			{
@@ -50,13 +56,14 @@ HTML;
 			}
 			$size = getSize($arr['details']['stat']['size']);
 			$time = date("Y-m-d H:i",$arr['details']['stat']['ctime']);
-			$type = strtolower(substr($arr['name'],strpos($arr['name'],".")?strpos($arr['name'],".")+1:0)."文件");
-			$arr['name'] = iconv($config['SystemCharset'],"utf-8",$arr['name']);
+			$type = $arr['details']['pathinfo']['extension']?$arr['details']['pathinfo']['extension']."文件":"未知文件";
+			//$arr['name'] = iconv($config['SystemCharset'],"utf-8",$arr['name']);
+			$img  = "HDir/img/filetype/".getMType($arr['details']['pathinfo']['extension']?$arr['details']['pathinfo']['extension']:null).".gif";
 			echo <<<HTML
 				<tr>
 					
-					<td style="width:5%;border:none;">
-						&nbsp;
+					<td style="width:5%;text-align:right;border:none;">
+						<img src="{$img}" />
 					</td>
 					
 					<td style="width:50%;background-color: lightcoral;">
