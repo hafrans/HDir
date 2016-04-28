@@ -250,6 +250,7 @@ class HDir{
 	 	 * 显示文件
 	 	 * @access private
 	 	 * @return array list 文件详情
+		 * @ 0428
 	 	 */
 	 	private function showFiles(){
 	 		if(!$this->dir_handle)
