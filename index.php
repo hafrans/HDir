@@ -12,7 +12,7 @@
 	  			"title" => "Hafrans Directory Mirror",
 	  			"SystemCharset" => 'gbk//ignore'
 	  ];
-	 require "./Hdir/tool.functions.php";
+	 require "./HDir/tool.functions.php";
 	 require "./HDir/HDir.class.php";
 	 $string = substr($_SERVER['REQUEST_URI'],strpos($_SERVER['REQUEST_URI'],"?")?strpos($_SERVER['REQUEST_URI'],"?")+1:-1);
 	 $string = (($string = $string == "/"?false:$string) == false || $string == 'pp' ||  $string == 'p' )?null:$string ;// php test
