@@ -17,7 +17,7 @@
 			else
 			{
 				$append = $string?"/":false;
-				$url .= $string.$append.$arr['name'];
+				$url .= $string.$append.urlencode($arr['name']);
 				$img  = "HDir/img/filetype/02.gif";
 			}
 			
