@@ -17,8 +17,8 @@
 	 require "./HDir/HDir.class.php";
 	 $string = substr($_SERVER['REQUEST_URI'],strpos($_SERVER['REQUEST_URI'],"?")?strpos($_SERVER['REQUEST_URI'],"?")+1:-1);
 	 $string = (($string = $string == "/"?false:$string) == false || $string == 'pp' ||  $string == 'p' )?null:$string ;// php test
-	 $string = $string == null?null:iconv("utf-8",$config['SystemCharset'], urldecode($string));
-	 $dir = new HDir($string);
+	 $dir = new HDir($p = $string == null?null:iconv("utf-8",$config['SystemCharset'],urldecode($string)));
+	 $string = $string == null?null:iconv("utf-8",$config['SystemCharset'], $string);
 	 $cdir= $dir->getCurrentDir();
 	 $lib = $dir->showLists();
 	 //load templates
