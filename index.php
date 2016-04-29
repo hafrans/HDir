@@ -11,7 +11,7 @@
 	  error_reporting(E_ERROR | E_WARNING);
 	  $config = [
 	  			"title" => "Hafrans Directory Mirror",
-	  			"SystemCharset" => 'gbk//ignore'
+	  			"SystemCharset" => 'utf8'
 	  ];
 	 require "./HDir/tool.functions.php";
 	 require "./HDir/HDir.class.php";

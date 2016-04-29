@@ -12,7 +12,16 @@ a good substitute.If you know some simple HTML / CSS, then you can create your o
 あなたいくつかの単純なHTML / CSSの場合は、直接カスタムカタログ・インタフェースを作成することができます
 
 
+
+
+
 #####在Linux下显示中文的前提是安装相应的中文支持包
+
+#####[在中国使用时]注意：在Linux下文件名为UTF8 但是在Win下为GBK这样会产生乱码
+安装convmv，进入网站根目录
+执行convmv -r -f GBK -t UTF-8 --notest *
+
+
 
 ---
 ##Version
