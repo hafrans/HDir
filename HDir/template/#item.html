@@ -54,13 +54,14 @@ HTML;
 				$url  =  $arr['name'];
 			}else
 			{
-				$url  =  $string."/".$arr['name'];
+				$url  =  $string."/".urlencode($arr['name']);
 			}
 			$size = getSize($arr['details']['stat']['size']);
 			$time = date("Y-m-d H:i",$arr['details']['stat']['ctime']);
 			$type = $arr['details']['pathinfo']['extension']?$arr['details']['pathinfo']['extension']."文件":"未知文件";
 			//$arr['name'] = iconv($config['SystemCharset'],"utf-8",$arr['name']);
 			$img  = "HDir/img/filetype/".getMType($arr['details']['pathinfo']['extension']?$arr['details']['pathinfo']['extension']:null).".gif";
+			//$pname = urlencode($arr['name']);
 			echo <<<HTML
 				<tr>
 					
