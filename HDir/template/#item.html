@@ -1,5 +1,7 @@
 <?php
 		$string = $string?iconv($config['SystemCharset'],"utf-8",$string):null;
+		natsort($lib['dir']);
+		natsort($lib['file']);
 		foreach($lib['dir'] as $arr)
 		{
 			$url = "";
